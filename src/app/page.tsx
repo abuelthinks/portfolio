@@ -204,10 +204,10 @@ export default function Home() {
 
         <div className="flex w-full justify-between items-end text-slate-500 font-medium uppercase tracking-widest text-xs">
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/abuel-bayangan-13b653187/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
               LinkedIn
             </a>
-            <a href="#" className="hover:text-white transition-colors flex items-center gap-2">
+            <a href="https://github.com/abuelthinks" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
               GitHub
             </a>
           </div>
