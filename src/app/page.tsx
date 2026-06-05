@@ -196,9 +196,9 @@ export default function Home() {
           Let&apos;s Build <br/> <span className="gradient-text-neon">Together</span>
         </h2>
         
-        <a href="mailto:hello@example.com" className="group flex items-center gap-4 text-2xl md:text-4xl font-bold mb-16 relative">
+        <a href="mailto:abuel.dev@gmail.com" className="group flex items-center gap-4 text-2xl md:text-4xl font-bold mb-16 relative">
           <Mail className="w-8 h-8 text-[#00ffcc] group-hover:-rotate-12 transition-transform" />
-          Say Hello
+          abuel.dev@gmail.com
           <span className="absolute -bottom-2 left-0 w-0 h-1 bg-[#00ffcc] group-hover:w-full transition-all duration-500"></span>
         </a>
 
