@@ -127,10 +127,16 @@ export default function Home() {
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 bento-card aspect-[4/3] w-full flex items-center justify-center p-12 bg-gradient-to-tr from-[#050505] to-[#0f172a]">
-                 {/* Placeholder for real screenshot */}
+                 {/* ARASE Video Showcase */}
                  <div className="w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden group-hover:border-[#00ffcc]/30 transition-colors">
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
-                    <span className="text-6xl font-black tracking-tighter text-white/10 group-hover:text-white/20 transition-colors">ARASE</span>
+                    <video 
+                      src="/ARASE.mp4" 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline 
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                    />
                  </div>
               </div>
               <div className="lg:col-span-5 flex flex-col relative z-10">
