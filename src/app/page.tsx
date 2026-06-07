@@ -1,8 +1,14 @@
+"use client";
+
 import Image from 'next/image';
-import { ArrowRight, Github, ExternalLink, Code2, Layers, Database, Sparkles, Mail, MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, Github, ExternalLink, Code2, Layers, Database, Sparkles, Mail, MapPin, X } from 'lucide-react';
 
 export default function Home() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
   return (
+    <>
     <main className="flex flex-col items-center px-4 md:px-12 lg:px-24 w-full max-w-[1400px] mx-auto pb-32">
       
       {/* Navigation */}
@@ -126,9 +132,12 @@ export default function Home() {
             <div className="absolute -inset-y-12 -inset-x-8 bg-white/[0.02] rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 bento-card aspect-[4/3] w-full flex items-center justify-center p-12 bg-gradient-to-tr from-[#050505] to-[#0f172a]">
+              <div className="lg:col-span-7 bento-card aspect-video w-full flex items-center justify-center p-8 bg-gradient-to-tr from-[#050505] to-[#0f172a]">
                  {/* ARASE Video Showcase */}
-                 <div className="w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden group-hover:border-[#00ffcc]/30 transition-colors">
+                 <div 
+                   onClick={() => setIsVideoModalOpen(true)}
+                   className="w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden group-hover:border-[#00ffcc]/30 transition-colors cursor-pointer"
+                 >
                     <video 
                       src="/ARASE.mp4" 
                       autoPlay 
@@ -137,6 +146,9 @@ export default function Home() {
                       playsInline 
                       className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                     />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                      <span className="text-white font-bold tracking-widest uppercase border border-white/20 px-6 py-3 rounded-full bg-black/50">Play Full Video</span>
+                    </div>
                  </div>
               </div>
               <div className="lg:col-span-5 flex flex-col relative z-10">
@@ -222,5 +234,26 @@ export default function Home() {
       </footer>
 
     </main>
+
+      {/* Video Modal Overlay */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-12 animate-in fade-in duration-300">
+          <button 
+            onClick={() => setIsVideoModalOpen(false)}
+            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors p-2 bg-white/10 hover:bg-white/20 rounded-full z-50"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <div className="w-full max-w-7xl aspect-video rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(0,255,204,0.1)] border border-white/10">
+            <video 
+              src="/ARASE.mp4" 
+              autoPlay 
+              controls 
+              className="w-full h-full object-contain bg-black"
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
