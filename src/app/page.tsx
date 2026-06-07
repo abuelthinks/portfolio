@@ -188,18 +188,22 @@ export default function Home() {
                     <span key={t} className="px-4 py-2 border border-white/10 rounded-full text-xs font-bold uppercase tracking-wider text-slate-300">{t}</span>
                   ))}
                 </div>
-                <button className="flex items-center gap-4 text-white font-bold hover:text-[#ff007f] transition-colors w-fit group/btn">
+                <a href="https://depedtambayan.org" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-white font-bold hover:text-[#ff007f] transition-colors w-fit group/btn">
                   Visit Site
                   <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:border-[#ff007f] group-hover/btn:translate-x-2 transition-all">
                     <ExternalLink className="w-4 h-4" />
                   </div>
-                </button>
+                </a>
               </div>
-              <div className="lg:col-span-7 bento-card aspect-[4/3] w-full flex items-center justify-center p-12 bg-gradient-to-br from-[#050505] to-[#1a0f14] lg:order-2 order-1">
-                 {/* Placeholder for real screenshot */}
+              <div className="lg:col-span-7 bento-card aspect-video w-full flex items-center justify-center p-8 bg-gradient-to-br from-[#050505] to-[#1a0f14] lg:order-2 order-1">
+                 {/* DepEd Screenshot Showcase */}
                  <div className="w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden group-hover:border-[#ff007f]/30 transition-colors">
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
-                    <span className="text-6xl font-black tracking-tighter text-white/10 group-hover:text-white/20 transition-colors">DEPED</span>
+                    <Image 
+                      src="/depedtambayan.png" 
+                      alt="DepEdTambayan Homepage" 
+                      fill 
+                      className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                    />
                  </div>
               </div>
             </div>
