@@ -136,7 +136,7 @@ export default function Home() {
                  {/* ARASE Video Showcase */}
                  <div 
                    onClick={() => setIsVideoModalOpen(true)}
-                   className="w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden group-hover:border-[#00ffcc]/30 transition-colors cursor-pointer"
+                   className="group/video w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden hover:border-[#00ffcc]/30 transition-colors cursor-pointer"
                  >
                     <video 
                       src="/ARASE.mp4" 
@@ -144,9 +144,9 @@ export default function Home() {
                       loop 
                       muted 
                       playsInline 
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                      className="w-full h-full object-cover opacity-80 group-hover/video:opacity-100 transition-opacity duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/video:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
                       <span className="text-white font-bold tracking-widest uppercase border border-white/20 px-6 py-3 rounded-full bg-black/50">Play Full Video</span>
                     </div>
                  </div>
@@ -197,12 +197,12 @@ export default function Home() {
               </div>
               <div className="lg:col-span-7 bento-card aspect-video w-full flex items-center justify-center p-8 bg-gradient-to-br from-[#050505] to-[#1a0f14] lg:order-2 order-1">
                  {/* DepEd Screenshot Showcase */}
-                 <div className="w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden group-hover:border-[#ff007f]/30 transition-colors">
+                 <div className="group/image w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden hover:border-[#ff007f]/30 transition-colors">
                     <Image 
                       src="/depedtambayan.png" 
                       alt="DepEdTambayan Homepage" 
                       fill 
-                      className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                      className="object-cover opacity-80 group-hover/image:opacity-100 transition-opacity duration-500"
                     />
                  </div>
               </div>
