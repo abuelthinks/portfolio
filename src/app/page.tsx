@@ -163,7 +163,7 @@ export default function Home() {
                     <span key={t} className="px-4 py-2 border border-white/10 rounded-full text-xs font-bold uppercase tracking-wider text-slate-300">{t}</span>
                   ))}
                 </div>
-                <a href="https://github.com/abuelthinks" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-white font-bold hover:text-[#00ffcc] transition-colors w-fit group/btn">
+                <a href="https://github.com/abuelthinks/arase1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-white font-bold hover:text-[#00ffcc] transition-colors w-fit group/btn">
                   View Source Code
                   <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:border-[#00ffcc] group-hover/btn:translate-x-2 transition-all">
                     <Code2 className="w-4 h-4" />
