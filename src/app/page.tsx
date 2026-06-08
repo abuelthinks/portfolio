@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { ArrowRight, Github, ExternalLink, Code2, Layers, Database, Sparkles, Mail, MapPin, X } from 'lucide-react';
+import { ArrowRight, ExternalLink, Code2, Layers, Database, Sparkles, Mail, MapPin, X } from 'lucide-react';
 
 export default function Home() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -166,7 +166,7 @@ export default function Home() {
                 <a href="https://github.com/abuelthinks" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-white font-bold hover:text-[#00ffcc] transition-colors w-fit group/btn">
                   View Source Code
                   <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:border-[#00ffcc] group-hover/btn:translate-x-2 transition-all">
-                    <Github className="w-4 h-4" />
+                    <Code2 className="w-4 h-4" />
                   </div>
                 </a>
               </div>
