@@ -6,6 +6,7 @@ import { ArrowRight, Github, ExternalLink, Code2, Layers, Database, Sparkles, Ma
 
 export default function Home() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   return (
     <>
@@ -162,12 +163,12 @@ export default function Home() {
                     <span key={t} className="px-4 py-2 border border-white/10 rounded-full text-xs font-bold uppercase tracking-wider text-slate-300">{t}</span>
                   ))}
                 </div>
-                <button className="flex items-center gap-4 text-white font-bold hover:text-[#00ffcc] transition-colors w-fit group/btn">
-                  View Case Study
+                <a href="https://github.com/abuelthinks" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-white font-bold hover:text-[#00ffcc] transition-colors w-fit group/btn">
+                  View Source Code
                   <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:border-[#00ffcc] group-hover/btn:translate-x-2 transition-all">
-                    <ArrowRight className="w-4 h-4" />
+                    <Github className="w-4 h-4" />
                   </div>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -197,13 +198,19 @@ export default function Home() {
               </div>
               <div className="lg:col-span-7 bento-card aspect-video w-full flex items-center justify-center p-8 bg-gradient-to-br from-[#050505] to-[#1a0f14] lg:order-2 order-1">
                  {/* DepEd Screenshot Showcase */}
-                 <div className="group/image w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden hover:border-[#ff007f]/30 transition-colors">
+                 <div 
+                   onClick={() => setIsImageModalOpen(true)}
+                   className="group/image w-full h-full border border-white/10 rounded-xl bg-[#050505] flex items-center justify-center shadow-2xl relative overflow-hidden hover:border-[#ff007f]/30 transition-colors cursor-pointer"
+                 >
                     <Image 
                       src="/depedtambayan.png" 
                       alt="DepEdTambayan Homepage" 
                       fill 
                       className="object-cover opacity-80 group-hover/image:opacity-100 transition-opacity duration-500"
                     />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                      <span className="text-white font-bold tracking-widest uppercase border border-white/20 px-6 py-3 rounded-full bg-black/50">View Full Image</span>
+                    </div>
                  </div>
               </div>
             </div>
@@ -254,6 +261,26 @@ export default function Home() {
               autoPlay 
               controls 
               className="w-full h-full object-contain bg-black"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Image Modal Overlay */}
+      {isImageModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-12 animate-in fade-in duration-300">
+          <button 
+            onClick={() => setIsImageModalOpen(false)}
+            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors p-2 bg-white/10 hover:bg-white/20 rounded-full z-50"
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <div className="w-full max-w-7xl aspect-video rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(255,0,127,0.1)] border border-white/10 relative">
+            <Image 
+              src="/depedtambayan.png" 
+              alt="DepEdTambayan Homepage" 
+              fill 
+              className="object-contain bg-black"
             />
           </div>
         </div>
