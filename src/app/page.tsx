@@ -55,10 +55,10 @@ export default function Home() {
           <div className="h-px bg-white/10 flex-1"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-6 auto-rows-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-6 auto-rows-auto md:auto-rows-[200px]">
           
           {/* Profile Picture Box */}
-          <div className="bento-card md:col-span-1 md:row-span-2 group">
+          <div className="bento-card md:col-span-1 md:row-span-2 group min-h-[250px] md:min-h-0">
             <Image 
               src="/profile.png" 
               alt="Abuel" 
@@ -70,7 +70,7 @@ export default function Home() {
           </div>
 
           {/* Intro Box */}
-          <div className="bento-card md:col-span-2 md:row-span-1 p-8 flex flex-col justify-center">
+          <div className="bento-card md:col-span-2 md:row-span-1 p-6 md:p-8 flex flex-col justify-center">
             <h3 className="text-cyber mb-2">Location</h3>
             <p className="text-xl font-medium leading-snug flex items-center gap-2">
               <MapPin className="text-[#ff007f]" /> Baguio City, Philippines
@@ -81,23 +81,14 @@ export default function Home() {
           </div>
 
           {/* Frontend Box */}
-          <div className="bento-card md:col-span-1 md:row-span-1 p-8 bg-gradient-to-br from-[#050505] to-[#0f172a]/50">
+          <div className="bento-card md:col-span-1 md:row-span-1 p-6 md:p-8 bg-gradient-to-br from-[#050505] to-[#0f172a]/50">
             <Code2 className="w-8 h-8 text-[#00ffcc] mb-4" />
             <h3 className="text-lg font-bold mb-2">Frontend</h3>
             <p className="text-slate-400 text-sm">Next.js 16, React 19, TypeScript, Tailwind CSS.</p>
           </div>
 
-          {/* Backend Box */}
-          <div className="bento-card md:col-span-1 md:row-span-2 p-8 flex flex-col justify-between border-[#ff007f]/20 hover:border-[#ff007f]/50">
-            <Layers className="w-8 h-8 text-[#ff007f]" />
-            <div>
-              <h3 className="text-lg font-bold mb-2">Backend & Arch</h3>
-              <p className="text-slate-400 text-sm mb-4">Python, Django, Django REST Framework, Vercel, Railway.</p>
-            </div>
-          </div>
-
           {/* Database & Tools Box */}
-          <div className="bento-card md:col-span-2 md:row-span-1 p-8 flex items-center justify-between">
+          <div className="bento-card md:col-span-2 md:row-span-1 p-6 md:p-8 flex items-center justify-between">
             <div>
               <h3 className="text-cyber mb-2">Data & Storage</h3>
               <p className="text-xl font-bold">PostgreSQL, SQLite, Redis</p>
@@ -105,8 +96,17 @@ export default function Home() {
             <Database className="w-12 h-12 text-white/10" />
           </div>
 
+          {/* Backend Box */}
+          <div className="bento-card md:col-span-1 md:row-span-2 p-6 md:p-8 flex flex-col justify-between border-[#ff007f]/20 hover:border-[#ff007f]/50">
+            <Layers className="w-8 h-8 text-[#ff007f]" />
+            <div>
+              <h3 className="text-lg font-bold mb-2">Backend & Arch</h3>
+              <p className="text-slate-400 text-sm mb-4">Python, Django, Django REST Framework, Vercel, Railway.</p>
+            </div>
+          </div>
+
           {/* Extra Box */}
-          <div className="bento-card md:col-span-3 md:row-span-1 p-8 flex items-center gap-6 overflow-hidden relative">
+          <div className="bento-card md:col-span-3 md:row-span-1 p-6 md:p-8 flex items-center gap-6 overflow-hidden relative">
             <Sparkles className="w-8 h-8 text-[#00ffcc] shrink-0" />
             <p className="text-lg font-medium relative z-10">
               Beyond code, I handle WordPress management, SEO-conscious publishing, and visual content creation via Canva.
@@ -126,14 +126,14 @@ export default function Home() {
           <div className="h-px bg-white/10 flex-1"></div>
         </div>
 
-        <div className="flex flex-col gap-32">
+        <div className="flex flex-col gap-16 md:gap-32">
           
           {/* ARASE */}
           <div className="group relative w-full">
             <div className="absolute -inset-y-12 -inset-x-8 bg-white/[0.02] rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 bento-card aspect-video w-full flex items-center justify-center p-8 bg-gradient-to-tr from-[#050505] to-[#0f172a]">
+              <div className="lg:col-span-7 bento-card aspect-video w-full flex items-center justify-center p-4 sm:p-6 md:p-8 bg-gradient-to-tr from-[#050505] to-[#0f172a]">
                  {/* ARASE Video Showcase */}
                  <div 
                    onClick={() => setIsVideoModalOpen(true)}
@@ -196,7 +196,7 @@ export default function Home() {
                   </div>
                 </a>
               </div>
-              <div className="lg:col-span-7 bento-card aspect-video w-full flex items-center justify-center p-8 bg-gradient-to-br from-[#050505] to-[#1a0f14] lg:order-2 order-1">
+              <div className="lg:col-span-7 bento-card aspect-video w-full flex items-center justify-center p-4 sm:p-6 md:p-8 bg-gradient-to-br from-[#050505] to-[#1a0f14] lg:order-2 order-1">
                  {/* DepEd Screenshot Showcase */}
                  <div 
                    onClick={() => setIsImageModalOpen(true)}
@@ -225,13 +225,13 @@ export default function Home() {
           Let&apos;s Build <br/> <span className="gradient-text-neon">Together</span>
         </h2>
         
-        <a href="mailto:abuel.dev@gmail.com" className="group flex items-center gap-4 text-2xl md:text-4xl font-bold mb-16 relative">
-          <Mail className="w-8 h-8 text-[#00ffcc] group-hover:-rotate-12 transition-transform" />
-          abuel.dev@gmail.com
+        <a href="mailto:abuel.dev@gmail.com" className="group flex flex-wrap justify-center items-center gap-2 md:gap-4 text-xl sm:text-2xl md:text-4xl font-bold mb-16 relative text-center w-full break-all">
+          <Mail className="w-8 h-8 text-[#00ffcc] group-hover:-rotate-12 transition-transform shrink-0" />
+          <span>abuel.dev@gmail.com</span>
           <span className="absolute -bottom-2 left-0 w-0 h-1 bg-[#00ffcc] group-hover:w-full transition-all duration-500"></span>
         </a>
 
-        <div className="flex w-full justify-between items-end text-slate-500 font-medium uppercase tracking-widest text-xs">
+        <div className="flex flex-col sm:flex-row gap-4 w-full justify-between items-center sm:items-end text-slate-500 font-medium uppercase tracking-widest text-xs">
           <div className="flex gap-6">
             <a href="https://www.linkedin.com/in/abuel-bayangan-13b653187/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
               LinkedIn
@@ -251,11 +251,11 @@ export default function Home() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-12 animate-in fade-in duration-300">
           <button 
             onClick={() => setIsVideoModalOpen(false)}
-            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors p-2 bg-white/10 hover:bg-white/20 rounded-full z-50"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors p-2 bg-white/10 hover:bg-white/20 rounded-full z-50"
           >
-            <X className="w-8 h-8" />
+            <X className="w-6 h-6 md:w-8 md:h-8" />
           </button>
-          <div className="w-full max-w-7xl aspect-video rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(0,255,204,0.1)] border border-white/10">
+          <div className="w-full max-w-5xl aspect-video max-h-[75vh] md:max-h-none rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(0,255,204,0.1)] border border-white/10">
             <video 
               src="/ARASE.mp4" 
               autoPlay 
@@ -271,11 +271,11 @@ export default function Home() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-12 animate-in fade-in duration-300">
           <button 
             onClick={() => setIsImageModalOpen(false)}
-            className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors p-2 bg-white/10 hover:bg-white/20 rounded-full z-50"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors p-2 bg-white/10 hover:bg-white/20 rounded-full z-50"
           >
-            <X className="w-8 h-8" />
+            <X className="w-6 h-6 md:w-8 md:h-8" />
           </button>
-          <div className="w-full max-w-7xl aspect-video rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(255,0,127,0.1)] border border-white/10 relative">
+          <div className="w-full max-w-5xl aspect-video max-h-[75vh] md:max-h-none rounded-2xl overflow-hidden shadow-[0_0_100px_rgba(255,0,127,0.1)] border border-white/10 relative">
             <Image 
               src="/depedtambayan.png" 
               alt="DepEdTambayan Homepage" 
